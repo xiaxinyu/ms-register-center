@@ -1,0 +1,16 @@
+server:
+  port: 8762
+      
+spring:
+  application:
+    name: nacos-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8761
+
+logging:
+  level:
+    com:
+      alibaba:
+        nacos: debug
