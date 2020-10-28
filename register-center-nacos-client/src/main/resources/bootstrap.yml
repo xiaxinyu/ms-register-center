@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: nacos-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8761
+      config:
+        server-addr: localhost:8761
+        file-extension: yml
+
+server:
+  port: 8762

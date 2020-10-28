@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +21,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 @SpringBootApplication
 @RestController
 @EnableDiscoveryClient
+@RefreshScope
 public class Application {
 
     @NacosInjected
@@ -35,7 +37,7 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 
-    @NacosValue(value = "${service.name:1}", autoRefreshed = true)
+    @Value(value = "${client.key: test}")
     private String serverName;
 
     @RequestMapping(value = "/test", method = GET)
