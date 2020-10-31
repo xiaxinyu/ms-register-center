@@ -46,7 +46,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>center.ApplicationRegisterCenter</mainClass>
+                    <mainClass>com.sailfish.register.center.ApplicationRegisterCenter</mainClass>
                 </configuration>
                 <executions>
                     <execution>
